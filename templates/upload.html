@@ -1,0 +1,23 @@
+<html>
+   <head>
+      <style>
+         body {
+            background-color: #2d2c3a;
+         }
+         input {
+            color: #f1e5e5;
+         }
+         .button {
+            color: black;
+         }
+         
+         </style>
+   </head>
+   <body>
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit" class = "button"/>
+      </form>   
+   </body>
+</html>

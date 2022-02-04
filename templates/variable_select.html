@@ -1,0 +1,33 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+  <script type="text/javascript">// <![CDATA[
+    function preloader() {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }//preloader
+    window.onload = preloader;
+// ]]></script>
+</head>
+
+<body>
+  <div id="loading"></div>
+  <div id="content">
+    <form action="http://localhost:5000/chosen_train" method="POST">
+
+      <div>
+        <label class="label">Variable:</label>
+        <select id="variable" name="variable" width="600px">
+          <option SELECTED value='0'>Choose the target variable</option>
+          {% for x in vars %}
+          <option value='{{ x }}'>{{x}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Submit" onclick="loading();" class="button">
+      </div>
+
+      <div>
+        <!-- <input type="submit" value="Submit" onclick="loading();" class = "button"> -->
+      </div>
+    </form>
+  </div>

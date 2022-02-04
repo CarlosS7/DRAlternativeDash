@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+    <title>Title</title>
+</head>
+
+<body>
+    <header class="header">.</header>
+    <main>
+        <div class="side-bar">
+            <table id="results">
+                {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+                <h6> </h6>
+                {% endfor %}
+            </table>
+
+        </div>
+        <div class="content">
+            <div class="chart-area">
+                <img src="{{url_for('static', filename='roc_curve.png')}}" align="middle" />
+            </div>
+        </div>
+        <div class="confusion-matrix">
+            <div class="matrix-area">
+                <img src="{{url_for('static', filename='matrix.png')}}" align="middle" />
+            </div>
+        </div>
+    </main>
+    <h6> </h6>
+
+
+
+
+</body>
+
+</html>
